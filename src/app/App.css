@@ -1,0 +1,21 @@
+@font-face {
+	font-family: 'Yusei Magic';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../assets/fonts/yusei-magic/YuseiMagic-Regular.ttf')
+		format('truetype');
+}
+@font-face {
+	font-family: 'Merriweather';
+	font-weight: 400;
+	font-style: normal;
+	src: url('../assets/fonts/merriweather/Merriweather-Regular.ttf')
+		format('truetype');
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	font-weight: 400;
+	font-style: normal;
+	src: url('../assets/fonts/fira-sans/FiraSans-Regular.ttf') format('truetype');
+}
