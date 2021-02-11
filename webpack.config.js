@@ -4,8 +4,26 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
 	entry: './src/index.js',
 	mode: 'development',
+	context: path.resolve(__dirname),
 	module: {
 		rules: [
+			{
+				test: /\.scss$/,
+				use: [
+					'style-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							importLoaders: 1,
+							modules: {
+								localIdentName: '[local]___[hash:base64:5]',
+							},
+						},
+					},
+					'sass-loader',
+				],
+				include: /\.module\.scss$/,
+			},
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
@@ -13,8 +31,16 @@ module.exports = {
 				options: { presets: ['@babel/env'] },
 			},
 			{
-				test: /\.(scss|css)$/,
-				use: ['style-loader', 'css-loader', 'sass-loader'],
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader'],
+			},
+			{
+				test: /\.(png|jpe?g)$/i,
+				type: 'asset/resource',
+			},
+			{
+				test: /\.ttf$/,
+				type: 'asset/resource',
 			},
 		],
 	},
