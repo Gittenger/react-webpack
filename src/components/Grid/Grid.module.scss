@@ -1,0 +1,29 @@
+.grid {
+	display: grid;
+	grid-template-columns:
+		[side-start] 10rem [side-end main-start] minmax(5rem, 10rem)
+		[center-start] repeat(6, [col-start] minmax(min-content, 20rem) [col-end])
+		[center-end] minmax(5rem, 10rem)
+		[main-end];
+	grid-template-rows: 40vh min-content 40vw;
+	grid-gap: 1rem;
+}
+
+.side {
+	grid-column: side-start / side-end;
+	grid-row: 1 / -1;
+	background: dodgerblue;
+}
+
+.center {
+	grid-column: center-start / center-end;
+	grid-row: 1 / -1;
+	background: ghostwhite;
+}
+
+.item {
+	grid-row: 1 / -1;
+	background: beige;
+}
+.bottom {
+}
