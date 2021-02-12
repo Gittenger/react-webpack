@@ -7,8 +7,9 @@ const Grid = () => (
 	<div className={styles.grid}>
 		<div className={styles.side}></div>
 		<Center className={styles.center}></Center>
-		<div className={styles.item}></div>
-		<div className={styles.item}></div>
+		<div className={`${styles.item} ${styles.itemLeft}`}></div>
+		<div className={`${styles.item} ${styles.itemRight}`}></div>
+		<div className={styles.bottom}>BOTTOM CONTENT</div>
 	</div>
 )
 

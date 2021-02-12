@@ -5,8 +5,7 @@
 		[center-start] repeat(6, [col-start] minmax(min-content, 20rem) [col-end])
 		[center-end] minmax(5rem, 10rem)
 		[main-end];
-	grid-template-rows: 40vh min-content 40vw;
-	grid-gap: 1rem;
+	grid-template-rows: 1fr min-content;
 }
 
 .side {
@@ -17,13 +16,23 @@
 
 .center {
 	grid-column: center-start / center-end;
-	grid-row: 1 / -1;
+	grid-row: 1 / 2;
 	background: ghostwhite;
 }
 
 .item {
-	grid-row: 1 / -1;
+	grid-row: 1 / span 1;
 	background: beige;
 }
+
+.itemLeft {
+	grid-column: 2 / 3;
+}
+.itemRight {
+	grid-column: -1 / -2;
+}
+
 .bottom {
+	grid-column: 2 / -1;
+	background: bisque;
 }
